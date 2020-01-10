@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="241" failures="0" time="2073.422">
+  <testsuite name="src/__tests__/KeyTransformer.e2e.test.ts" errors="0" failures="0" skipped="0" timestamp="2020-01-04T22:30:21" time="280.876" tests="14">
+    <testcase classname=" Test getX with a two part primary key." name=" Test getX with a two part primary key." time="1.956" file="src/__tests__/KeyTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test updateX with a two part primary key." name=" Test updateX with a two part primary key." time="2.281" file="src/__tests__/KeyTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test deleteX with a two part primary key." name=" Test deleteX with a two part primary key." time="2.943" file="src/__tests__/KeyTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test getX with a three part primary key" name=" Test getX with a three part primary key" time="0.811" file="src/__tests__/KeyTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test updateX with a three part primary key." name=" Test updateX with a three part primary key." time="2.002" file="src/__tests__/KeyTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test deleteX with a three part primary key." name=" Test deleteX with a three part primary key." time="2.302" file="src/__tests__/KeyTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test listX with three part primary key." name=" Test listX with three part primary key." time="7.547" file="src/__tests__/KeyTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test query with three part secondary key." name=" Test query with three part secondary key." time="9.032" file="src/__tests__/KeyTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test query with three part secondary key, where sort key is an enum." name=" Test query with three part secondary key, where sort key is an enum." time="6.184" file="src/__tests__/KeyTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test update mutation validation with three part secondary key." name=" Test update mutation validation with three part secondary key." time="2.927" file="src/__tests__/KeyTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test Customer Create with list member and secondary key" name=" Test Customer Create with list member and secondary key" time="1.33" file="src/__tests__/KeyTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test Customer Mutation with list member" name=" Test Customer Mutation with list member" time="0.817" file="src/__tests__/KeyTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test @key directive with customer sortDirection" name=" Test @key directive with customer sortDirection" time="2.631" file="src/__tests__/KeyTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test @key directive with sortDirection on GSI" name=" Test @key directive with sortDirection on GSI" time="2.848" file="src/__tests__/KeyTransformer.e2e.test.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="src/__tests__/MutationCondition.e2e.test.ts" errors="0" failures="0" skipped="0" timestamp="2020-01-04T22:30:21" time="326.747" tests="19">
+    <testcase classname="Local Mutation Condition tests Type without directives" name="Local Mutation Condition tests Type without directives" time="0.042" file="src/__tests__/MutationCondition.e2e.test.ts">
+    </testcase>
+    <testcase classname="Local Mutation Condition tests Type with primary @key - single field - directive" name="Local Mutation Condition tests Type with primary @key - single field - directive" time="0.028" file="src/__tests__/MutationCondition.e2e.test.ts">
+    </testcase>
+    <testcase classname="Local Mutation Condition tests Type with primary @key - multiple field - directive" name="Local Mutation Condition tests Type with primary @key - multiple field - directive" time="0.014" file="src/__tests__/MutationCondition.e2e.test.ts">
+    </testcase>
+    <testcase classname="Local Mutation Condition tests Type with @auth directive - owner" name="Local Mutation Condition tests Type with @auth directive - owner" time="0.019" file="src/__tests__/MutationCondition.e2e.test.ts">
+    </testcase>
+    <testcase classname="Local Mutation Condition tests Type with @auth directive - owner custom field name" name="Local Mutation Condition tests Type with @auth directive - owner custom field name" time="0.013" file="src/__tests__/MutationCondition.e2e.test.ts">
+    </testcase>
+    <testcase classname="Local Mutation Condition tests Type with @auth directive - groups" name="Local Mutation Condition tests Type with @auth directive - groups" time="0.013" file="src/__tests__/MutationCondition.e2e.test.ts">
+    </testcase>
+    <testcase classname="Local Mutation Condition tests Type with @auth directive - groups custom field name" name="Local Mutation Condition tests Type with @auth directive - groups custom field name" time="0.012" file="src/__tests__/MutationCondition.e2e.test.ts">
+    </testcase>
+    <testcase classname="Local Mutation Condition tests Type with @auth directive - multiple rules" name="Local Mutation Condition tests Type with @auth directive - multiple rules" time="0.012" file="src/__tests__/MutationCondition.e2e.test.ts">
+    </testcase>
+    <testcase classname="Local Mutation Condition tests Type with @versioned directive - no changes on condition" name="Local Mutation Condition tests Type with @versioned directive - no changes on condition" time="0.01" file="src/__tests__/MutationCondition.e2e.test.ts">
+    </testcase>
+    <testcase classname="Local Mutation Condition tests Type with @versioned directive - custom field, no changes on condition" name="Local Mutation Condition tests Type with @versioned directive - custom field, no changes on condition" time="0.009" file="src/__tests__/MutationCondition.e2e.test.ts">
+    </testcase>
+    <testcase classname="Deployed Mutation Condition tests Create Mutation with failing condition" name="Deployed Mutation Condition tests Create Mutation with failing condition" time="1.058" file="src/__tests__/MutationCondition.e2e.test.ts">
+    </testcase>
+    <testcase classname="Deployed Mutation Condition tests Update Mutation with failing and succeeding condition" name="Deployed Mutation Condition tests Update Mutation with failing and succeeding condition" time="2.879" file="src/__tests__/MutationCondition.e2e.test.ts">
+    </testcase>
+    <testcase classname="Deployed Mutation Condition tests Update Mutation with failing and succeeding complex conditions" name="Deployed Mutation Condition tests Update Mutation with failing and succeeding complex conditions" time="1.552" file="src/__tests__/MutationCondition.e2e.test.ts">
+    </testcase>
+    <testcase classname="Deployed Mutation Condition tests Delete Mutation with failing and succeeding complex conditions" name="Deployed Mutation Condition tests Delete Mutation with failing and succeeding complex conditions" time="1.358" file="src/__tests__/MutationCondition.e2e.test.ts">
+    </testcase>
+    <testcase classname="Deployed Mutation Condition tests Update Mutation with different owners and same condition" name="Deployed Mutation Condition tests Update Mutation with different owners and same condition" time="2.486" file="src/__tests__/MutationCondition.e2e.test.ts">
+    </testcase>
+    <testcase classname="Deployed Mutation Condition tests Delete Mutation with different owners and same condition" name="Deployed Mutation Condition tests Delete Mutation with different owners and same condition" time="1.875" file="src/__tests__/MutationCondition.e2e.test.ts">
+    </testcase>
+    <testcase classname="Local V4-V5 Transformer tests V4 transform result" name="Local V4-V5 Transformer tests V4 transform result" time="0.022" file="src/__tests__/MutationCondition.e2e.test.ts">
+    </testcase>
+    <testcase classname="Local V4-V5 Transformer tests V5 transform result" name="Local V4-V5 Transformer tests V5 transform result" time="0.019" file="src/__tests__/MutationCondition.e2e.test.ts">
+    </testcase>
+    <testcase classname="Local V4-V5 Transformer tests Current version transform result" name="Local V4-V5 Transformer tests Current version transform result" time="0.012" file="src/__tests__/MutationCondition.e2e.test.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="src/__tests__/DynamoDBModelTransformer.e2e.test.ts" errors="0" failures="0" skipped="0" timestamp="2020-01-04T22:30:21" time="331.366" tests="11">
+    <testcase classname=" Test createAuthor mutation" name=" Test createAuthor mutation" time="2.195" file="src/__tests__/DynamoDBModelTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test createPost mutation" name=" Test createPost mutation" time="2.288" file="src/__tests__/DynamoDBModelTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test updatePost mutation" name=" Test updatePost mutation" time="3.045" file="src/__tests__/DynamoDBModelTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test createPost and updatePost mutation with a client generated id." name=" Test createPost and updatePost mutation with a client generated id." time="4.742" file="src/__tests__/DynamoDBModelTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test deletePost mutation" name=" Test deletePost mutation" time="2.633" file="src/__tests__/DynamoDBModelTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test getPost query" name=" Test getPost query" time="2.036" file="src/__tests__/DynamoDBModelTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test listPosts query" name=" Test listPosts query" time="2.538" file="src/__tests__/DynamoDBModelTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test listPosts query with filter" name=" Test listPosts query with filter" time="2.149" file="src/__tests__/DynamoDBModelTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test enum filters List" name=" Test enum filters List" time="5.683" file="src/__tests__/DynamoDBModelTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test createPost mutation with non-model types" name=" Test createPost mutation with non-model types" time="1.302" file="src/__tests__/DynamoDBModelTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test updatePost mutation with non-model types" name=" Test updatePost mutation with non-model types" time="1.018" file="src/__tests__/DynamoDBModelTransformer.e2e.test.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="src/__tests__/SubscriptionsWithAuthTest.e2e.test.ts" errors="0" failures="0" skipped="0" timestamp="2020-01-04T22:30:22" time="389.703" tests="8">
+    <testcase classname=" Test that only authorized members are allowed to view subscriptions" name=" Test that only authorized members are allowed to view subscriptions" time="2.899" file="src/__tests__/SubscriptionsWithAuthTest.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test that an user not in the group is not allowed to view the subscription" name=" Test that an user not in the group is not allowed to view the subscription" time="0.26" file="src/__tests__/SubscriptionsWithAuthTest.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test a subscription on update" name=" Test a subscription on update" time="3.977" file="src/__tests__/SubscriptionsWithAuthTest.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test a subscription on delete" name=" Test a subscription on delete" time="2.867" file="src/__tests__/SubscriptionsWithAuthTest.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test subscription onCreatePost with ownerField" name=" Test subscription onCreatePost with ownerField" time="3.064" file="src/__tests__/SubscriptionsWithAuthTest.e2e.test.ts">
+    </testcase>
+    <testcase classname=" test that subcsription with apiKey" name=" test that subcsription with apiKey" time="2.523" file="src/__tests__/SubscriptionsWithAuthTest.e2e.test.ts">
+    </testcase>
+    <testcase classname=" test that subscription with apiKey onUpdate" name=" test that subscription with apiKey onUpdate" time="3.773" file="src/__tests__/SubscriptionsWithAuthTest.e2e.test.ts">
+    </testcase>
+    <testcase classname=" test that subscription with apiKey onDelete" name=" test that subscription with apiKey onDelete" time="3.68" file="src/__tests__/SubscriptionsWithAuthTest.e2e.test.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="src/__tests__/KeyTransformerLocal.e2e.test.ts" errors="0" failures="0" skipped="0" timestamp="2020-01-04T22:36:51" time="1.323" tests="9">
+    <testcase classname=" Test that a primary @key with a single field changes the hash key." name=" Test that a primary @key with a single field changes the hash key." time="0.031" file="src/__tests__/KeyTransformerLocal.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test that a primary @key with 2 fields changes the hash and sort key." name=" Test that a primary @key with 2 fields changes the hash and sort key." time="0.017" file="src/__tests__/KeyTransformerLocal.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test that a primary @key with 3 fields changes the hash and sort keys." name=" Test that a primary @key with 3 fields changes the hash and sort keys." time="0.026" file="src/__tests__/KeyTransformerLocal.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test that a secondary @key with 3 fields changes the hash and sort keys and adds a query fields correctly." name=" Test that a secondary @key with 3 fields changes the hash and sort keys and adds a query fields correctly." time="0.027" file="src/__tests__/KeyTransformerLocal.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test that a secondary @key with a single field adds a GSI." name=" Test that a secondary @key with a single field adds a GSI." time="0.006" file="src/__tests__/KeyTransformerLocal.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test that a secondary @key with a multiple field adds an GSI." name=" Test that a secondary @key with a multiple field adds an GSI." time="0.01" file="src/__tests__/KeyTransformerLocal.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test that a secondary @key with a multiple field adds an LSI." name=" Test that a secondary @key with a multiple field adds an LSI." time="0.009" file="src/__tests__/KeyTransformerLocal.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test that a primary @key with complex fields will update the input objects." name=" Test that a primary @key with complex fields will update the input objects." time="0.008" file="src/__tests__/KeyTransformerLocal.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test that connection type is generated for custom query when queries is set to null." name=" Test that connection type is generated for custom query when queries is set to null." time="0.006" file="src/__tests__/KeyTransformerLocal.e2e.test.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="src/__tests__/MultiAuthModelAuthTransformer.e2e.test.ts" errors="0" failures="0" skipped="0" timestamp="2020-01-04T22:30:21" time="584.578" tests="17">
+    <testcase classname=" Test &apos;public&apos; authStrategy" name=" Test &apos;public&apos; authStrategy" time="2.22" file="src/__tests__/MultiAuthModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test &apos;public&apos; provider: &apos;iam&apos; authStrategy" name=" Test &apos;public&apos; provider: &apos;iam&apos; authStrategy" time="2.069" file="src/__tests__/MultiAuthModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test &apos;private&apos; authStrategy" name=" Test &apos;private&apos; authStrategy" time="1.77" file="src/__tests__/MultiAuthModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test &apos;private&apos; provider: &apos;iam&apos; authStrategy" name=" Test &apos;private&apos; provider: &apos;iam&apos; authStrategy" time="1.693" file="src/__tests__/MultiAuthModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test &apos;private&apos; provider: &apos;iam&apos; authStrategy" name=" Test &apos;private&apos; provider: &apos;iam&apos; authStrategy" time="4.079" file="src/__tests__/MultiAuthModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="Test IAM protected field operations Get UserPool - Succeed" name="Test IAM protected field operations Get UserPool - Succeed" time="0.684" file="src/__tests__/MultiAuthModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="Test IAM protected field operations Get UserPool with secret - Fail" name="Test IAM protected field operations Get UserPool with secret - Fail" time="0.871" file="src/__tests__/MultiAuthModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="Test IAM protected field operations Get IAM with secret - Fail (only create and update)" name="Test IAM protected field operations Get IAM with secret - Fail (only create and update)" time="0.28" file="src/__tests__/MultiAuthModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="Connection tests with @auth on type Create a Post with UserPool - Fail" name="Connection tests with @auth on type Create a Post with UserPool - Fail" time="0.181" file="src/__tests__/MultiAuthModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="Connection tests with @auth on type Add a comment with ApiKey - Fail" name="Connection tests with @auth on type Add a comment with ApiKey - Fail" time="0.253" file="src/__tests__/MultiAuthModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="Connection tests with @auth on type Get Post with ApiKey - Succeed" name="Connection tests with @auth on type Get Post with ApiKey - Succeed" time="0.904" file="src/__tests__/MultiAuthModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="Connection tests with @auth on type Get Post+Comments with ApiKey - Fail" name="Connection tests with @auth on type Get Post+Comments with ApiKey - Fail" time="0.706" file="src/__tests__/MultiAuthModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="Connection tests with @auth on type Get Post with UserPool - Fail" name="Connection tests with @auth on type Get Post with UserPool - Fail" time="0.267" file="src/__tests__/MultiAuthModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="Connection tests with @auth on type Get Comment with UserPool - Succeed" name="Connection tests with @auth on type Get Comment with UserPool - Succeed" time="0.597" file="src/__tests__/MultiAuthModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="Connection tests with @auth on type Get Comment with ApiKey - Fail" name="Connection tests with @auth on type Get Comment with ApiKey - Fail" time="0.255" file="src/__tests__/MultiAuthModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="Connection tests with @auth on type Get Comment with Post with UserPool - Succeed, but null for Post field" name="Connection tests with @auth on type Get Comment with Post with UserPool - Succeed, but null for Post field" time="0.656" file="src/__tests__/MultiAuthModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="IAM Tests Execute @key query - Succeed" name="IAM Tests Execute @key query - Succeed" time="0.658" file="src/__tests__/MultiAuthModelAuthTransformer.e2e.test.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="src/__tests__/ModelAuthTransformer.e2e.test.ts" errors="0" failures="0" skipped="0" timestamp="2020-01-04T22:30:21" time="683.853" tests="69">
+    <testcase classname="ModelAuthTests Test createCompoundProtected as admin and owner" name="ModelAuthTests Test createCompoundProtected as admin and owner" time="1.187" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test createCompoundProtected fails not authorised when not owner" name="ModelAuthTests Test createCompoundProtected fails not authorised when not owner" time="0.728" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test createCompoundProtected not authorised when not in static group" name="ModelAuthTests Test createCompoundProtected not authorised when not in static group" time="0.267" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test getCompoundProtected when authorised as static group and owner" name="ModelAuthTests Test getCompoundProtected when authorised as static group and owner" time="2.242" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test getCompoundProtected when authorised as dynamic group and owner" name="ModelAuthTests Test getCompoundProtected when authorised as dynamic group and owner" time="1.208" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test getCompoundProtected when authorised as owner on two fields" name="ModelAuthTests Test getCompoundProtected when authorised as owner on two fields" time="1.949" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test listCompoundProtected when authorised as admin group and owner" name="ModelAuthTests Test listCompoundProtected when authorised as admin group and owner" time="2.934" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test listCompoundProtected when authorised to view a single item" name="ModelAuthTests Test listCompoundProtected when authorised to view a single item" time="1.364" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test updateCompoundProtected when authorised as static group and owner" name="ModelAuthTests Test updateCompoundProtected when authorised as static group and owner" time="3.732" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test updateCompoundProtected when authorised as dynamic group and owner" name="ModelAuthTests Test updateCompoundProtected when authorised as dynamic group and owner" time="1.476" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test updateCompoundProtected not authorised as dynamic group" name="ModelAuthTests Test updateCompoundProtected not authorised as dynamic group" time="0.954" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test updateCompoundProtected not authorised as static group" name="ModelAuthTests Test updateCompoundProtected not authorised as static group" time="1.327" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test deleteCompoundProtected when authorised as static group and owner" name="ModelAuthTests Test deleteCompoundProtected when authorised as static group and owner" time="0.997" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test deleteCompoundProtected when not authorised as static group" name="ModelAuthTests Test deleteCompoundProtected when not authorised as static group" time="0.59" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test deleteCompoundProtected not authorised as owner" name="ModelAuthTests Test deleteCompoundProtected not authorised as owner" time="0.49" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test createPost mutation" name="ModelAuthTests Test createPost mutation" time="1.436" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test getPost query when authorized" name="ModelAuthTests Test getPost query when authorized" time="1.738" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test getPost query when not authorized" name="ModelAuthTests Test getPost query when not authorized" time="1.115" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test updatePost mutation when authorized" name="ModelAuthTests Test updatePost mutation when authorized" time="2.501" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test updatePost mutation when not authorized" name="ModelAuthTests Test updatePost mutation when not authorized" time="0.769" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test deletePost mutation when authorized" name="ModelAuthTests Test deletePost mutation when authorized" time="1.518" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test deletePost mutation when not authorized" name="ModelAuthTests Test deletePost mutation when not authorized" time="1.051" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test listPosts query when authorized" name="ModelAuthTests Test listPosts query when authorized" time="1.965" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test createSalary w/ Admin group protection authorized" name="ModelAuthTests Test createSalary w/ Admin group protection authorized" time="0.799" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test update my own salary without admin permission" name="ModelAuthTests Test update my own salary without admin permission" time="1.572" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test updating someone else&apos;s salary as an admin" name="ModelAuthTests Test updating someone else&apos;s salary as an admin" time="1.461" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test updating someone else&apos;s salary when I am not admin." name="ModelAuthTests Test updating someone else&apos;s salary when I am not admin." time="0.859" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test deleteSalary w/ Admin group protection authorized" name="ModelAuthTests Test deleteSalary w/ Admin group protection authorized" time="1.268" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test deleteSalary w/ Admin group protection not authorized" name="ModelAuthTests Test deleteSalary w/ Admin group protection not authorized" time="1.086" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test and Admin can get a salary created by any user" name="ModelAuthTests Test and Admin can get a salary created by any user" time="1.127" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test owner can create and get a salary when not admin" name="ModelAuthTests Test owner can create and get a salary when not admin" time="0.786" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test getSalary w/ Admin group protection not authorized" name="ModelAuthTests Test getSalary w/ Admin group protection not authorized" time="1.051" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test listSalarys w/ Admin group protection authorized" name="ModelAuthTests Test listSalarys w/ Admin group protection authorized" time="1.695" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test listSalarys w/ Admin group protection not authorized" name="ModelAuthTests Test listSalarys w/ Admin group protection not authorized" time="1.279" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test createManyGroupProtected w/ dynamic group protection authorized" name="ModelAuthTests Test createManyGroupProtected w/ dynamic group protection authorized" time="0.424" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test createManyGroupProtected w/ dynamic group protection when not authorized" name="ModelAuthTests Test createManyGroupProtected w/ dynamic group protection when not authorized" time="0.247" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test createSingleGroupProtected w/ dynamic group protection authorized" name="ModelAuthTests Test createSingleGroupProtected w/ dynamic group protection authorized" time="0.715" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test createSingleGroupProtected w/ dynamic group protection when not authorized" name="ModelAuthTests Test createSingleGroupProtected w/ dynamic group protection when not authorized" time="0.301" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test listPWProtecteds when the user is authorized." name="ModelAuthTests Test listPWProtecteds when the user is authorized." time="2.32" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test listPWProtecteds when groups is null in dynamodb." name="ModelAuthTests Test listPWProtecteds when groups is null in dynamodb." time="1.427" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test Protecteds when the user is not authorized." name="ModelAuthTests Test Protecteds when the user is not authorized." time="3.488" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test creating, updating, and deleting an admin note as an admin" name="ModelAuthTests Test creating, updating, and deleting an admin note as an admin" time="1.638" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test creating, updating, and deleting an admin note as a non admin" name="ModelAuthTests Test creating, updating, and deleting an admin note as a non admin" time="1.511" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test getAllThree as admin." name="ModelAuthTests Test getAllThree as admin." time="1.679" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test getAllThree as owner." name="ModelAuthTests Test getAllThree as owner." time="1.146" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test getAllThree as one of a set of editors." name="ModelAuthTests Test getAllThree as one of a set of editors." time="2.012" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test getAllThree as a member of a dynamic group." name="ModelAuthTests Test getAllThree as a member of a dynamic group." time="1.536" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test getAllThree as a member of the alternative group." name="ModelAuthTests Test getAllThree as a member of the alternative group." time="1.844" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test listAllThrees as admin." name="ModelAuthTests Test listAllThrees as admin." time="1.783" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test listAllThrees as owner." name="ModelAuthTests Test listAllThrees as owner." time="1.876" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test listAllThrees as one of a set of editors." name="ModelAuthTests Test listAllThrees as one of a set of editors." time="1.6" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test listAllThrees as a member of a dynamic group." name="ModelAuthTests Test listAllThrees as a member of a dynamic group." time="1.602" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test getAllThree as a member of the alternative group." name="ModelAuthTests Test getAllThree as a member of the alternative group." time="2.049" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test createAllThree as admin." name="ModelAuthTests Test createAllThree as admin." time="3.992" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test createAllThree as owner." name="ModelAuthTests Test createAllThree as owner." time="1.74" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test createAllThree as one of a set of editors." name="ModelAuthTests Test createAllThree as one of a set of editors." time="2.156" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test createAllThree as a member of a dynamic group." name="ModelAuthTests Test createAllThree as a member of a dynamic group." time="1.166" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test createAllThree as a member of the alternative group." name="ModelAuthTests Test createAllThree as a member of the alternative group." time="1.288" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test updateAllThree and deleteAllThree as admin." name="ModelAuthTests Test updateAllThree and deleteAllThree as admin." time="0.921" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test updateAllThree and deleteAllThree as owner." name="ModelAuthTests Test updateAllThree and deleteAllThree as owner." time="1.576" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test updateAllThree and deleteAllThree as one of a set of editors." name="ModelAuthTests Test updateAllThree and deleteAllThree as one of a set of editors." time="1.466" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test updateAllThree and deleteAllThree as a member of a dynamic group." name="ModelAuthTests Test updateAllThree and deleteAllThree as a member of a dynamic group." time="1.388" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test updateAllThree and deleteAllThree as a member of the alternative group." name="ModelAuthTests Test updateAllThree and deleteAllThree as a member of the alternative group." time="2.736" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test createTestIdentity as admin." name="ModelAuthTests Test createTestIdentity as admin." time="2.834" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test get and list with &apos;read&apos; operation set" name="ModelAuthTests Test get and list with &apos;read&apos; operation set" time="1.894" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test createOwnerCreateUpdateDeleteProtected with &apos;create&apos; operation set" name="ModelAuthTests Test createOwnerCreateUpdateDeleteProtected with &apos;create&apos; operation set" time="1.111" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test updateOwnerCreateUpdateDeleteProtected with &apos;update&apos; operation set" name="ModelAuthTests Test updateOwnerCreateUpdateDeleteProtected with &apos;update&apos; operation set" time="1.331" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test deleteOwnerCreateUpdateDeleteProtected with &apos;update&apos; operation set" name="ModelAuthTests Test deleteOwnerCreateUpdateDeleteProtected with &apos;update&apos; operation set" time="2.045" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname="ModelAuthTests Test allow private combined with groups as Admin and non-admin users" name="ModelAuthTests Test allow private combined with groups as Admin and non-admin users" time="5.708" file="src/__tests__/ModelAuthTransformer.e2e.test.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="src/__tests__/NewConnectionTransformer.e2e.test.ts" errors="0" failures="0" skipped="0" timestamp="2020-01-04T22:35:53" time="426.971" tests="7">
+    <testcase classname=" Test Parent.child getItem" name=" Test Parent.child getItem" time="3.149" file="src/__tests__/NewConnectionTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test Child.parents query" name=" Test Child.parents query" time="3.127" file="src/__tests__/NewConnectionTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test PostModel.singleAuthor GetItem with composite sortkey" name=" Test PostModel.singleAuthor GetItem with composite sortkey" time="1.47" file="src/__tests__/NewConnectionTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test PostModel.authors query with composite sortkey" name=" Test PostModel.authors query with composite sortkey" time="2.692" file="src/__tests__/NewConnectionTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test PostModel.authors query with composite sortkey passed as arg." name=" Test PostModel.authors query with composite sortkey passed as arg." time="1.844" file="src/__tests__/NewConnectionTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test User.authorPosts.posts query followed by getItem (intermediary model)" name=" Test User.authorPosts.posts query followed by getItem (intermediary model)" time="1.102" file="src/__tests__/NewConnectionTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test User.friendship.friend query (reflexive has many)." name=" Test User.friendship.friend query (reflexive has many)." time="2.297" file="src/__tests__/NewConnectionTransformer.e2e.test.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="src/__tests__/ModelConnectionTransformer.e2e.test.ts" errors="0" failures="0" skipped="0" timestamp="2020-01-04T22:35:48" time="434.81" tests="5">
+    <testcase classname=" Test queryPost query" name=" Test queryPost query" time="2.831" file="src/__tests__/ModelConnectionTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test queryPost query with sortField" name=" Test queryPost query with sortField" time="8.527" file="src/__tests__/ModelConnectionTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test create comment without a post and then querying the comment." name=" Test create comment without a post and then querying the comment." time="1.586" file="src/__tests__/ModelConnectionTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test album self connection." name=" Test album self connection." time="1.27" file="src/__tests__/ModelConnectionTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test default limit is 50" name=" Test default limit is 50" time="27.236" file="src/__tests__/ModelConnectionTransformer.e2e.test.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="src/__tests__/NewConnectionWithAuth.e2e.test.ts" errors="0" failures="0" skipped="0" timestamp="2020-01-04T22:36:53" time="425.114" tests="5">
+    <testcase classname=" Test creating a post and immediately view it via the User.posts connection." name=" Test creating a post and immediately view it via the User.posts connection." time="3.059" file="src/__tests__/NewConnectionWithAuth.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Testing reading an owner protected field as a non owner" name=" Testing reading an owner protected field as a non owner" time="3.209" file="src/__tests__/NewConnectionWithAuth.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test that @connection resolvers respect @model read operations." name=" Test that @connection resolvers respect @model read operations." time="3.647" file="src/__tests__/NewConnectionWithAuth.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test that owners cannot set the field of a FieldProtected object unless authorized." name=" Test that owners cannot set the field of a FieldProtected object unless authorized." time="1.501" file="src/__tests__/NewConnectionWithAuth.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test that owners cannot update the field of a FieldProtected object unless authorized." name=" Test that owners cannot update the field of a FieldProtected object unless authorized." time="3.697" file="src/__tests__/NewConnectionWithAuth.e2e.test.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="src/__tests__/ConnectionsWithAuthTests.e2e.test.ts" errors="0" failures="0" skipped="0" timestamp="2020-01-04T22:40:06" time="401.725" tests="5">
+    <testcase classname=" Test creating a post and immediately view it via the User.posts connection." name=" Test creating a post and immediately view it via the User.posts connection." time="2.647" file="src/__tests__/ConnectionsWithAuthTests.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Testing reading an owner protected field as a non owner" name=" Testing reading an owner protected field as a non owner" time="2.785" file="src/__tests__/ConnectionsWithAuthTests.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test that @connection resolvers respect @model read operations." name=" Test that @connection resolvers respect @model read operations." time="4.056" file="src/__tests__/ConnectionsWithAuthTests.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test that owners cannot set the field of a FieldProtected object unless authorized." name=" Test that owners cannot set the field of a FieldProtected object unless authorized." time="2.082" file="src/__tests__/ConnectionsWithAuthTests.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test that owners cannot update the field of a FieldProtected object unless authorized." name=" Test that owners cannot update the field of a FieldProtected object unless authorized." time="2.657" file="src/__tests__/ConnectionsWithAuthTests.e2e.test.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="src/__tests__/KeyWithAuth.e2e.test.ts" errors="0" failures="0" skipped="0" timestamp="2020-01-04T22:41:45" time="333.858" tests="9">
+    <testcase classname=" Test createOrder mutation as admin" name=" Test createOrder mutation as admin" time="1.158" file="src/__tests__/KeyWithAuth.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test createOrder mutation as owner" name=" Test createOrder mutation as owner" time="0.874" file="src/__tests__/KeyWithAuth.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test createOrder mutation as owner" name=" Test createOrder mutation as owner" time="0.665" file="src/__tests__/KeyWithAuth.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test list orders as owner" name=" Test list orders as owner" time="3.037" file="src/__tests__/KeyWithAuth.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test list orders as non owner" name=" Test list orders as non owner" time="2.747" file="src/__tests__/KeyWithAuth.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test get orders as owner" name=" Test get orders as owner" time="1.348" file="src/__tests__/KeyWithAuth.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test get orders as non-owner" name=" Test get orders as non-owner" time="1.291" file="src/__tests__/KeyWithAuth.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test query orders as owner" name=" Test query orders as owner" time="1.883" file="src/__tests__/KeyWithAuth.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test query orders as non owner" name=" Test query orders as non owner" time="0.902" file="src/__tests__/KeyWithAuth.e2e.test.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="src/__tests__/CustomRoots.e2e.test.ts" errors="0" failures="0" skipped="0" timestamp="2020-01-04T22:47:19" time="0.571" tests="5">
+    <testcase classname=" Test custom root types with additional fields." name=" Test custom root types with additional fields." time="0.012" file="src/__tests__/CustomRoots.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test custom root query with no mutations/subscriptions." name=" Test custom root query with no mutations/subscriptions." time="0.007" file="src/__tests__/CustomRoots.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test custom root query &amp; mutation with no subscriptions." name=" Test custom root query &amp; mutation with no subscriptions." time="0.011" file="src/__tests__/CustomRoots.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test custom root query, mutation, and subscriptions." name=" Test custom root query, mutation, and subscriptions." time="0.01" file="src/__tests__/CustomRoots.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test custom roots without any directives. This should still be valid." name=" Test custom roots without any directives. This should still be valid." time="0.002" file="src/__tests__/CustomRoots.e2e.test.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="src/__tests__/HttpTransformer.e2e.test.ts" errors="0" failures="0" skipped="0" timestamp="2020-01-04T22:43:00" time="268.57" tests="9">
+    <testcase classname=" Test HTTP GET request" name=" Test HTTP GET request" time="1.272" file="src/__tests__/HttpTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test HTTP GET request 2" name=" Test HTTP GET request 2" time="1.365" file="src/__tests__/HttpTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test HTTP POST request" name=" Test HTTP POST request" time="0.82" file="src/__tests__/HttpTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test HTTP PUT request" name=" Test HTTP PUT request" time="1.536" file="src/__tests__/HttpTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test HTTP DELETE request" name=" Test HTTP DELETE request" time="1.127" file="src/__tests__/HttpTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test GET with URL param and query values" name=" Test GET with URL param and query values" time="1.124" file="src/__tests__/HttpTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test GET with multiple URL params and query values" name=" Test GET with multiple URL params and query values" time="1.129" file="src/__tests__/HttpTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test that GET errors when missing a required Query input object" name=" Test that GET errors when missing a required Query input object" time="0.206" file="src/__tests__/HttpTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test that POST errors when missing a non-null arg in query/body" name=" Test that POST errors when missing a non-null arg in query/body" time="0.64" file="src/__tests__/HttpTransformer.e2e.test.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="src/__tests__/FunctionTransformerTests.e2e.test.ts" errors="0" failures="0" skipped="0" timestamp="2020-01-04T22:43:58" time="260.798" tests="5">
+    <testcase classname=" Test simple echo function" name=" Test simple echo function" time="1.392" file="src/__tests__/FunctionTransformerTests.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test simple echoEnv function" name=" Test simple echoEnv function" time="0.808" file="src/__tests__/FunctionTransformerTests.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test simple duplicate function" name=" Test simple duplicate function" time="0.971" file="src/__tests__/FunctionTransformerTests.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test pipeline of @function(s)" name=" Test pipeline of @function(s)" time="1.511" file="src/__tests__/FunctionTransformerTests.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test pipelineReverse of @function(s)" name=" Test pipelineReverse of @function(s)" time="1.151" file="src/__tests__/FunctionTransformerTests.e2e.test.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="src/__tests__/ModelConnectionWithKeyTransformer.e2e.test.ts" errors="0" failures="0" skipped="0" timestamp="2020-01-04T22:43:03" time="421.561" tests="5">
+    <testcase classname=" Unnamed connection 1 way navigation, with primary @key directive 1:1" name=" Unnamed connection 1 way navigation, with primary @key directive 1:1" time="2.736" file="src/__tests__/ModelConnectionWithKeyTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Unnamed connection 1 way navigation, with primary @key directive 1:M" name=" Unnamed connection 1 way navigation, with primary @key directive 1:M" time="3.626" file="src/__tests__/ModelConnectionWithKeyTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Named connection 2 way navigation, with with custom @key fields 1:1" name=" Named connection 2 way navigation, with with custom @key fields 1:1" time="2.465" file="src/__tests__/ModelConnectionWithKeyTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Named connection 2 way navigation, with with custom @key fields 1:M" name=" Named connection 2 way navigation, with with custom @key fields 1:M" time="2.557" file="src/__tests__/ModelConnectionWithKeyTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Unnamed connection with sortField parameter only #2100" name=" Unnamed connection with sortField parameter only #2100" time="2.316" file="src/__tests__/ModelConnectionWithKeyTransformer.e2e.test.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="src/__tests__/TestComplexStackMappingsLocal.e2e.test.ts" errors="0" failures="0" skipped="0" timestamp="2020-01-04T22:50:05" time="0.662" tests="3">
+    <testcase classname=" Test that every resource exists in the correct stack given a complex schema with overlapping names." name=" Test that every resource exists in the correct stack given a complex schema with overlapping names." time="0.07" file="src/__tests__/TestComplexStackMappingsLocal.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test that every resource exists in the correct stack given a complex schema with overlapping names. Rotation 1." name=" Test that every resource exists in the correct stack given a complex schema with overlapping names. Rotation 1." time="0.03" file="src/__tests__/TestComplexStackMappingsLocal.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test that every resource exists in the correct stack given a complex schema with overlapping names. Rotation 2." name=" Test that every resource exists in the correct stack given a complex schema with overlapping names. Rotation 2." time="0.024" file="src/__tests__/TestComplexStackMappingsLocal.e2e.test.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="src/__tests__/NestedStacksTest.e2e.test.ts" errors="0" failures="0" skipped="0" timestamp="2020-01-04T22:50:05" time="0.216" tests="1">
+    <testcase classname=" Test custom root types with additional fields." name=" Test custom root types with additional fields." time="0.012" file="src/__tests__/NestedStacksTest.e2e.test.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="src/__tests__/NoneEnvFunctionTransformer.e2e.test.ts" errors="0" failures="0" skipped="0" timestamp="2020-01-04T22:47:20" time="221.54" tests="1">
+    <testcase classname=" Test simple echo function" name=" Test simple echo function" time="1.454" file="src/__tests__/NoneEnvFunctionTransformer.e2e.test.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="src/__tests__/PredictionsTransformerTests.e2e.test.ts" errors="0" failures="0" skipped="0" timestamp="2020-01-04T22:47:29" time="215.194" tests="2">
+    <testcase classname=" test translate and convert text to speech" name=" test translate and convert text to speech" time="1.919" file="src/__tests__/PredictionsTransformerTests.e2e.test.ts">
+    </testcase>
+    <testcase classname=" test translate text individually" name=" test translate text individually" time="0.41" file="src/__tests__/PredictionsTransformerTests.e2e.test.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="src/__tests__/VersionedModelTransformer.e2e.test.ts" errors="0" failures="0" skipped="0" timestamp="2020-01-04T22:46:48" time="289.675" tests="5">
+    <testcase classname=" Test createPost mutation" name=" Test createPost mutation" time="1.177" file="src/__tests__/VersionedModelTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test updatePost mutation" name=" Test updatePost mutation" time="1.78" file="src/__tests__/VersionedModelTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test failed updatePost mutation with wrong version" name=" Test failed updatePost mutation with wrong version" time="2.201" file="src/__tests__/VersionedModelTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test deletePost mutation" name=" Test deletePost mutation" time="1.795" file="src/__tests__/VersionedModelTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test deletePost mutation with wrong version" name=" Test deletePost mutation with wrong version" time="1.494" file="src/__tests__/VersionedModelTransformer.e2e.test.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="src/__tests__/PerFieldAuthTests.e2e.test.ts" errors="0" failures="0" skipped="0" timestamp="2020-01-04T22:48:19" time="379.21" tests="7">
+    <testcase classname=" Test that only Admins can create Employee records." name=" Test that only Admins can create Employee records." time="2.65" file="src/__tests__/PerFieldAuthTests.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test that only Admins and Managers may update salary &amp; Admins may update email." name=" Test that only Admins and Managers may update salary &amp; Admins may update email." time="7.011" file="src/__tests__/PerFieldAuthTests.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test that owners may update their bio." name=" Test that owners may update their bio." time="1.792" file="src/__tests__/PerFieldAuthTests.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test that everyone may view employee bios." name=" Test that everyone may view employee bios." time="2.153" file="src/__tests__/PerFieldAuthTests.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test that only owners may &quot;delete&quot; i.e. update the field to null." name=" Test that only owners may &quot;delete&quot; i.e. update the field to null." time="3.787" file="src/__tests__/PerFieldAuthTests.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test with auth with subscriptions on default behavior" name=" Test with auth with subscriptions on default behavior" time="1.553" file="src/__tests__/PerFieldAuthTests.e2e.test.ts">
+    </testcase>
+    <testcase classname=" AND per-field dynamic auth rule test" name=" AND per-field dynamic auth rule test" time="2.086" file="src/__tests__/PerFieldAuthTests.e2e.test.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="src/__tests__/SearchableModelTransformer.e2e.test.ts" errors="0" failures="0" skipped="0" timestamp="2020-01-04T22:30:22" time="1680.566" tests="13">
+    <testcase classname=" Test searchPosts with sort field on a string field" name=" Test searchPosts with sort field on a string field" time="3.443" file="src/__tests__/SearchableModelTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test searchPosts with sort on date type" name=" Test searchPosts with sort on date type" time="0.645" file="src/__tests__/SearchableModelTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test searchPosts query without filter" name=" Test searchPosts query without filter" time="1.051" file="src/__tests__/SearchableModelTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test searchPosts query with basic filter" name=" Test searchPosts query with basic filter" time="0.639" file="src/__tests__/SearchableModelTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test searchPosts query with non-recursive filter" name=" Test searchPosts query with non-recursive filter" time="0.726" file="src/__tests__/SearchableModelTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test searchPosts query with recursive filter 1" name=" Test searchPosts query with recursive filter 1" time="1.075" file="src/__tests__/SearchableModelTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test searchPosts query with recursive filter 2" name=" Test searchPosts query with recursive filter 2" time="0.929" file="src/__tests__/SearchableModelTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test searchPosts query with recursive filter 3" name=" Test searchPosts query with recursive filter 3" time="0.625" file="src/__tests__/SearchableModelTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test searchPosts query with recursive filter 4" name=" Test searchPosts query with recursive filter 4" time="1.791" file="src/__tests__/SearchableModelTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test searchPosts query with recursive filter 5" name=" Test searchPosts query with recursive filter 5" time="0.658" file="src/__tests__/SearchableModelTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test searchPosts query with recursive filter 6" name=" Test searchPosts query with recursive filter 6" time="0.712" file="src/__tests__/SearchableModelTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test deletePosts syncing with Elasticsearch" name=" Test deletePosts syncing with Elasticsearch" time="23.352" file="src/__tests__/SearchableModelTransformer.e2e.test.ts">
+    </testcase>
+    <testcase classname=" Test updatePost syncing with Elasticsearch" name=" Test updatePost syncing with Elasticsearch" time="23.241" file="src/__tests__/SearchableModelTransformer.e2e.test.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="src/__tests__/SearchableWithAuthTests.e2e.test.ts" errors="0" failures="0" skipped="0" timestamp="2020-01-04T22:35:02" time="1789.622" tests="7">
+    <testcase classname=" test Comments as owner" name=" test Comments as owner" time="1.434" file="src/__tests__/SearchableWithAuthTests.e2e.test.ts">
+    </testcase>
+    <testcase classname=" test Comments as user in writer group" name=" test Comments as user in writer group" time="1.085" file="src/__tests__/SearchableWithAuthTests.e2e.test.ts">
+    </testcase>
+    <testcase classname=" test Comments as user that is not an owner nor is in writer group" name=" test Comments as user that is not an owner nor is in writer group" time="1.165" file="src/__tests__/SearchableWithAuthTests.e2e.test.ts">
+    </testcase>
+    <testcase classname=" test Todo as user in the dynamic group admin" name=" test Todo as user in the dynamic group admin" time="0.656" file="src/__tests__/SearchableWithAuthTests.e2e.test.ts">
+    </testcase>
+    <testcase classname=" test Post as authorized user" name=" test Post as authorized user" time="0.78" file="src/__tests__/SearchableWithAuthTests.e2e.test.ts">
+    </testcase>
+    <testcase classname=" test searchPosts with apikey and secret removed" name=" test searchPosts with apikey and secret removed" time="0.715" file="src/__tests__/SearchableWithAuthTests.e2e.test.ts">
+    </testcase>
+    <testcase classname=" test post as an cognito user that is not allowed in this schema" name=" test post as an cognito user that is not allowed in this schema" time="0.738" file="src/__tests__/SearchableWithAuthTests.e2e.test.ts">
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,13 @@
+import { ObjectTypeDefinitionNode, FieldDefinitionNode, DocumentNode, InputObjectTypeDefinitionNode, InputValueDefinitionNode } from 'graphql';
+export declare function expectFields(type: ObjectTypeDefinitionNode, fields: string[]): void;
+export declare function expectNonNullFields(type: ObjectTypeDefinitionNode, fields: string[]): void;
+export declare function expectNullableFields(type: ObjectTypeDefinitionNode, fields: string[]): void;
+export declare function expectArguments(field: FieldDefinitionNode, args: string[]): void;
+export declare function doNotExpectFields(type: ObjectTypeDefinitionNode, fields: string[]): void;
+export declare function getObjectType(doc: DocumentNode, type: string): ObjectTypeDefinitionNode | undefined;
+export declare function getInputType(doc: DocumentNode, type: string): InputObjectTypeDefinitionNode | undefined;
+export declare function expectInputValues(type: InputObjectTypeDefinitionNode, fields: string[]): void;
+export declare function expectInputValueToHandle(type: InputObjectTypeDefinitionNode, f: (input: InputValueDefinitionNode) => boolean): void;
+export declare function expectNonNullInputValues(type: InputObjectTypeDefinitionNode, fields: string[]): void;
+export declare function expectNullableInputValues(type: InputObjectTypeDefinitionNode, fields: string[]): void;
+export declare function expectExactKeys(obj: Object, expectedSet: Set<string>): void;
