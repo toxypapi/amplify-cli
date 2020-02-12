@@ -326,10 +326,13 @@ function getCfnFiles(context, category, resourceName) {
   if (fs.existsSync(resourceBuildDir) && fs.lstatSync(resourceBuildDir).isDirectory()) {
     const files = fs.readdirSync(resourceBuildDir);
     const cfnFiles = files.filter(file => file.indexOf('.') !== 0).filter(file => file.indexOf('template') !== -1);
-    return {
-      resourceDir: resourceBuildDir,
-      cfnFiles,
-    };
+
+    if (cfnFiles.length > 0) {
+      return {
+        resourceDir: resourceBuildDir,
+        cfnFiles,
+      };
+    }
   }
   const files = fs.readdirSync(resourceDir);
   const cfnFiles = files.filter(file => file.indexOf('.') !== 0).filter(file => file.indexOf('template') !== -1);
