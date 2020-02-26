@@ -949,6 +949,48 @@ ${rule.and ? ', and: "' + rule.and + '"' : ''} }`
     return block('Owner Authorization Checks', [set(ref(variableToSet), defaultValue), ...ownerAuthorizationExpressions]);
   }
 
+  /**
+   * Given a list of rules return a VTL expression that checks if the given variableToCheck
+   * statisfies at least one of the auth rules.
+   * @param rules The list of dynamic group authorization rules.
+   */
+  public sourceTypeAuthorizationExpressionForReadOperations(
+    rules: AuthRule[],
+    variableToCheck: string = 'ctx.result',
+    variableToSet: string = ResourceConstants.SNIPPETS.IsSourceTypeAuthorizedVariable,
+    defaultValue: Expression = raw(`$util.defaultIfNull($${variableToSet}, false)`)
+  ): Expression {
+    if (!rules || rules.length === 0) {
+      return comment(`No Source Type Authorization Rules`);
+    }
+    let sourceTypeAuthorizationExpressions = [];
+    let ruleNumber = 0;
+
+    let compoundVariableToSet =
+      variableToCheck === 'item'
+        ? ResourceConstants.SNIPPETS.StaticCompoundAuthRuleCounts
+        : ResourceConstants.SNIPPETS.CompoundAuthRuleCounts;
+
+    for (const rule of rules) {
+      const sourceTypes = rule.sourceTypes || [];
+      const compoundAttribute = rule.and ? ', and: "' + rule.and + '"' : '';
+      const allowedSourceTypesVariable = `allowedSourceTypes${ruleNumber}`;
+      sourceTypeAuthorizationExpressions = sourceTypeAuthorizationExpressions.concat(
+        comment(`Authorization rule: { allow: ${rule.allow}, sourceTypes: ${JSON.stringify(sourceTypes)}${compoundAttribute} }`),
+        set(ref(allowedSourceTypesVariable), list(sourceTypes.map(str))),
+        forEach(ref('allowedSourceType'), ref(allowedSourceTypesVariable), [
+          iff(
+            raw(`$allowedSourceType == $ctx.source["__typename"]`),
+            rule.and ? this.incrementAuthRuleCounter(rule, compoundVariableToSet) : set(ref(variableToSet), raw('true'))
+          )
+        ])
+      );
+      ruleNumber++;
+    }
+    return block('Source Types Authorization Checks', [set(ref(variableToSet), defaultValue), ...sourceTypeAuthorizationExpressions]);
+  }
+
+
   public throwIfSubscriptionUnauthorized(rules: AuthRule[]): Expression {
     const ifUnauthThrow = iff(
       not(
@@ -1002,6 +1044,7 @@ ${rule.and ? ', and: "' + rule.and + '"' : ''} }`
             equals(ref(staticGroupAuthorizedVariable), raw('true')),
             equals(ref(ResourceConstants.SNIPPETS.IsDynamicGroupAuthorizedVariable), raw('true')),
             equals(ref(ResourceConstants.SNIPPETS.IsOwnerAuthorizedVariable), raw('true')),
+            equals(ref(ResourceConstants.SNIPPETS.IsSourceTypeAuthorizedVariable), raw('true')),
             ...this.compoundAuthCheck(rules),
           ])
         )

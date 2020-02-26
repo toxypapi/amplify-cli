@@ -1,4 +1,4 @@
-export declare type AuthStrategy = 'owner' | 'groups' | 'public' | 'private';
+export declare type AuthStrategy = 'owner' | 'groups' | 'public' | 'private' | 'source';
 export declare type AuthProvider = 'apiKey' | 'iam' | 'oidc' | 'userPools';
 export declare type ModelQuery = 'get' | 'list';
 export declare type ModelMutation = 'create' | 'update' | 'delete';
@@ -7,6 +7,7 @@ export interface AuthRule {
     allow: AuthStrategy;
     provider?: AuthProvider;
     ownerField?: string;
+    sourceTypes?: string[];
     identityField?: string;
     identityClaim?: string;
     groupsField?: string;

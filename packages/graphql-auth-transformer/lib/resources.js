@@ -563,6 +563,31 @@ ${rule.and ? ', and: "' + rule.and + '"' : ''} }`),
         }
         return graphql_mapping_template_1.block('Owner Authorization Checks', [graphql_mapping_template_1.set(graphql_mapping_template_1.ref(variableToSet), defaultValue), ...ownerAuthorizationExpressions]);
     }
+    /**
+     * Given a list of rules return a VTL expression that checks if the given variableToCheck
+     * statisfies at least one of the auth rules.
+     * @param rules The list of dynamic group authorization rules.
+     */
+    sourceTypeAuthorizationExpressionForReadOperations(rules, variableToCheck = 'ctx.result', variableToSet = graphql_transformer_common_1.ResourceConstants.SNIPPETS.IsSourceTypeAuthorizedVariable, defaultValue = graphql_mapping_template_1.raw(`$util.defaultIfNull($${variableToSet}, false)`)) {
+        if (!rules || rules.length === 0) {
+            return graphql_mapping_template_1.comment(`No Source Type Authorization Rules`);
+        }
+        let sourceTypeAuthorizationExpressions = [];
+        let ruleNumber = 0;
+        let compoundVariableToSet = variableToCheck === 'item'
+            ? graphql_transformer_common_1.ResourceConstants.SNIPPETS.StaticCompoundAuthRuleCounts
+            : graphql_transformer_common_1.ResourceConstants.SNIPPETS.CompoundAuthRuleCounts;
+        for (const rule of rules) {
+            const sourceTypes = rule.sourceTypes || [];
+            const compoundAttribute = rule.and ? ', and: "' + rule.and + '"' : '';
+            const allowedSourceTypesVariable = `allowedSourceTypes${ruleNumber}`;
+            sourceTypeAuthorizationExpressions = sourceTypeAuthorizationExpressions.concat(graphql_mapping_template_1.comment(`Authorization rule: { allow: ${rule.allow}, sourceTypes: ${JSON.stringify(sourceTypes)}${compoundAttribute} }`), graphql_mapping_template_1.set(graphql_mapping_template_1.ref(allowedSourceTypesVariable), graphql_mapping_template_1.list(sourceTypes.map(graphql_mapping_template_1.str))), graphql_mapping_template_1.forEach(graphql_mapping_template_1.ref('allowedSourceType'), graphql_mapping_template_1.ref(allowedSourceTypesVariable), [
+                graphql_mapping_template_1.iff(graphql_mapping_template_1.raw(`$allowedSourceType == $ctx.source["__typename"]`), rule.and ? this.incrementAuthRuleCounter(rule, compoundVariableToSet) : graphql_mapping_template_1.set(graphql_mapping_template_1.ref(variableToSet), graphql_mapping_template_1.raw('true')))
+            ]));
+            ruleNumber++;
+        }
+        return graphql_mapping_template_1.block('Source Types Authorization Checks', [graphql_mapping_template_1.set(graphql_mapping_template_1.ref(variableToSet), defaultValue), ...sourceTypeAuthorizationExpressions]);
+    }
     throwIfSubscriptionUnauthorized(rules) {
         const ifUnauthThrow = graphql_mapping_template_1.iff(graphql_mapping_template_1.not(graphql_mapping_template_1.parens(graphql_mapping_template_1.or([
             graphql_mapping_template_1.equals(graphql_mapping_template_1.ref(graphql_transformer_common_1.ResourceConstants.SNIPPETS.IsStaticGroupAuthorizedVariable), graphql_mapping_template_1.raw('true')),
@@ -597,6 +622,7 @@ ${rule.and ? ', and: "' + rule.and + '"' : ''} }`),
             graphql_mapping_template_1.equals(graphql_mapping_template_1.ref(staticGroupAuthorizedVariable), graphql_mapping_template_1.raw('true')),
             graphql_mapping_template_1.equals(graphql_mapping_template_1.ref(graphql_transformer_common_1.ResourceConstants.SNIPPETS.IsDynamicGroupAuthorizedVariable), graphql_mapping_template_1.raw('true')),
             graphql_mapping_template_1.equals(graphql_mapping_template_1.ref(graphql_transformer_common_1.ResourceConstants.SNIPPETS.IsOwnerAuthorizedVariable), graphql_mapping_template_1.raw('true')),
+            graphql_mapping_template_1.equals(graphql_mapping_template_1.ref(graphql_transformer_common_1.ResourceConstants.SNIPPETS.IsSourceTypeAuthorizedVariable), graphql_mapping_template_1.raw('true')),
             ...this.compoundAuthCheck(rules),
         ]))), graphql_mapping_template_1.raw('$util.unauthorized()'));
         return graphql_mapping_template_1.block('Throw if unauthorized', [ifUnauthThrow]);

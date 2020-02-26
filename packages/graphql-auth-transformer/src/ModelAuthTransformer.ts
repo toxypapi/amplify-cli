@@ -205,6 +205,10 @@ export class ModelAuthTransformer extends Transformer {
           # Connection to other auth rules with matching string. All rules with the same name must be true.
           and: String
 
+          # Allowed when the 'allow' argument is 'source'.
+          # Specifies a static list of source types that allow chained access to this type.
+          sourceTypes: [String]
+
           # Specifies operations to which this auth rule should be applied.
           operations: [ModelOperation]
 
@@ -221,6 +225,7 @@ export class ModelAuthTransformer extends Transformer {
           groups
           private
           public
+          source
         }
         enum AuthProvider {
           apiKey
@@ -1008,10 +1013,14 @@ All @auth directives used on field definitions are performed when the field is r
     const staticGroupAuthorizationRules = this.getStaticGroupRules(rules);
     const dynamicGroupAuthorizationRules = this.getDynamicGroupRules(rules);
     const ownerAuthorizationRules = this.getOwnerRules(rules);
+    const sourceTypeAuthorizationRules = this.getSourceTypeRules(rules);
     const providerAuthorization = this.hasProviderAuthRules(rules);
 
     if (
-      (staticGroupAuthorizationRules.length > 0 || dynamicGroupAuthorizationRules.length > 0 || ownerAuthorizationRules.length > 0) &&
+      (staticGroupAuthorizationRules.length > 0 ||
+        dynamicGroupAuthorizationRules.length > 0 ||
+        ownerAuthorizationRules.length > 0 ||
+        sourceTypeAuthorizationRules.length > 0) &&
       providerAuthorization === false
     ) {
       // Generate the expressions to validate each strategy.
@@ -1023,6 +1032,9 @@ All @auth directives used on field definitions are performed when the field is r
       const ownerAuthorizationExpression = this.resources.ownerAuthorizationExpressionForReadOperations(
         ownerAuthorizationRules,
         objectPath
+      );
+      const sourceTypeAuthorizationExpression = this.resources.sourceTypeAuthorizationExpressionForReadOperations(
+        sourceTypeAuthorizationRules
       );
       const throwIfUnauthorizedExpression = this.resources.throwIfUnauthorized(rules);
 
@@ -1060,6 +1072,8 @@ All @auth directives used on field definitions are performed when the field is r
         dynamicGroupAuthorizationExpression,
         newline(),
         ownerAuthorizationExpression,
+        newline(),
+        sourceTypeAuthorizationExpression,
         newline(),
         throwIfUnauthorizedExpression,
       ];
@@ -1130,6 +1144,7 @@ All @auth directives used on field definitions are performed when the field is r
     const staticGroupAuthorizationRules = this.getStaticGroupRules(rules);
     const dynamicGroupAuthorizationRules = this.getDynamicGroupRules(rules);
     const ownerAuthorizationRules = this.getOwnerRules(rules);
+    const sourceTypeAuthorizationRules = this.getSourceTypeRules(rules)
     const providerAuthorization = this.hasProviderAuthRules(rules);
 
     // if there is a rule combination of owner or group and private, public for userpools then we don't need to emit any of the access check
@@ -1159,6 +1174,12 @@ All @auth directives used on field definitions are performed when the field is r
         ResourceConstants.SNIPPETS.IsLocalOwnerAuthorizedVariable,
         raw(`false`)
       );
+      const sourceTypeAuthorizationExpression = this.resources.sourceTypeAuthorizationExpressionForReadOperations(
+        sourceTypeAuthorizationRules,
+        'item',
+        ResourceConstants.SNIPPETS.IsSourceTypeAuthorizedVariable,
+        raw('false')
+      );
       const appendIfLocallyAuthorized = this.resources.appendItemIfLocallyAuthorized(rules);
 
       const ifNotStaticallyAuthedFilterObjects = iff(
@@ -1174,6 +1195,8 @@ All @auth directives used on field definitions are performed when the field is r
               ref(ResourceConstants.SNIPPETS.StaticCompoundAuthRuleCounts),
               raw(`$util.parseJson($util.toJson($${ResourceConstants.SNIPPETS.CompoundAuthRuleCounts}))`)
             ),
+            sourceTypeAuthorizationExpression,
+            newline(),
             dynamicGroupAuthorizationExpression,
             newline(),
             ownerAuthorizationExpression,
@@ -1896,6 +1919,10 @@ All @auth directives used on field definitions are performed when the field is r
     return rules.filter(rule => rule.allow === 'groups' && !Boolean(rule.groups));
   }
 
+  private getSourceTypeRules(rules: AuthRule[]): AuthRule[] {
+    return rules.filter(rule => rule.allow === 'source' && Boolean(rule.sourceTypes));
+  }
+
   public hasProviderAuthRules(rules: AuthRule[]): Boolean {
     return rules.filter(rule => rule.provider === 'userPools' && (rule.allow === 'public' || rule.allow === 'private')).length > 0;
   }
@@ -2026,6 +2053,9 @@ All @auth directives used on field definitions are performed when the field is r
             break;
           case 'public':
             rule.provider = 'apiKey';
+            break;
+          case 'source':
+            rule.provider = 'userPools';
             break;
           default:
             rule.provider = null;

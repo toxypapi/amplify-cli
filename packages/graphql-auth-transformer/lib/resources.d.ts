@@ -97,6 +97,12 @@ export declare class ResourceFactory {
      * @param rules The list of dynamic group authorization rules.
      */
     ownerAuthorizationExpressionForReadOperations(rules: AuthRule[], variableToCheck?: string, variableToSet?: string, defaultValue?: Expression): Expression;
+    /**
+     * Given a list of rules return a VTL expression that checks if the given variableToCheck
+     * statisfies at least one of the auth rules.
+     * @param rules The list of dynamic group authorization rules.
+     */
+    sourceTypeAuthorizationExpressionForReadOperations(rules: AuthRule[], variableToCheck?: string, variableToSet?: string, defaultValue?: Expression): Expression;
     throwIfSubscriptionUnauthorized(rules: AuthRule[]): Expression;
     private incrementAuthRuleCounter;
     private compoundAuthCheck;

@@ -35,7 +35,7 @@ exports[`Test "create", "update", "delete" auth operations 3`] = `
 
 
   ## [Start] Throw if unauthorized **
-  #if( !($isStaticGroupAuthorized == true || $isDynamicGroupAuthorized == true || $isOwnerAuthorized == true) )
+  #if( !($isStaticGroupAuthorized == true || $isDynamicGroupAuthorized == true || $isOwnerAuthorized == true || $isSourceTypeAuthorized == true) )
     $util.unauthorized()
   #end
   ## [End] Throw if unauthorized **
@@ -721,7 +721,7 @@ exports[`Test that operation overwrites queries in auth operations 3`] = `
 
 
   ## [Start] Throw if unauthorized **
-  #if( !($isStaticGroupAuthorized == true || $isDynamicGroupAuthorized == true || $isOwnerAuthorized == true) )
+  #if( !($isStaticGroupAuthorized == true || $isDynamicGroupAuthorized == true || $isOwnerAuthorized == true || $isSourceTypeAuthorized == true) )
     $util.unauthorized()
   #end
   ## [End] Throw if unauthorized **

@@ -225,6 +225,7 @@ export declare class ModelAuthTransformer extends Transformer {
     private getOwnerRules;
     private getStaticGroupRules;
     private getDynamicGroupRules;
+    private getSourceTypeRules;
     hasProviderAuthRules(rules: AuthRule[]): Boolean;
     private extendTypeWithDirectives;
     private addDirectivesToOperation;

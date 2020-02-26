@@ -62,6 +62,10 @@ class ModelAuthTransformer extends graphql_transformer_core_1.Transformer {
           # Connection to other auth rules with matching string. All rules with the same name must be true.
           and: String
 
+          # Allowed when the 'allow' argument is 'source'.
+          # Specifies a static list of source types that allow chained access to this type.
+          sourceTypes: [String]
+
           # Specifies operations to which this auth rule should be applied.
           operations: [ModelOperation]
 
@@ -78,6 +82,7 @@ class ModelAuthTransformer extends graphql_transformer_core_1.Transformer {
           groups
           private
           public
+          source
         }
         enum AuthProvider {
           apiKey
@@ -703,13 +708,18 @@ All @auth directives used on field definitions are performed when the field is r
         const staticGroupAuthorizationRules = this.getStaticGroupRules(rules);
         const dynamicGroupAuthorizationRules = this.getDynamicGroupRules(rules);
         const ownerAuthorizationRules = this.getOwnerRules(rules);
+        const sourceTypeAuthorizationRules = this.getSourceTypeRules(rules);
         const providerAuthorization = this.hasProviderAuthRules(rules);
-        if ((staticGroupAuthorizationRules.length > 0 || dynamicGroupAuthorizationRules.length > 0 || ownerAuthorizationRules.length > 0) &&
+        if ((staticGroupAuthorizationRules.length > 0 ||
+            dynamicGroupAuthorizationRules.length > 0 ||
+            ownerAuthorizationRules.length > 0 ||
+            sourceTypeAuthorizationRules.length > 0) &&
             providerAuthorization === false) {
             // Generate the expressions to validate each strategy.
             const staticGroupAuthorizationExpression = this.resources.staticGroupAuthorizationExpression(staticGroupAuthorizationRules);
             const dynamicGroupAuthorizationExpression = this.resources.dynamicGroupAuthorizationExpressionForReadOperations(dynamicGroupAuthorizationRules, objectPath);
             const ownerAuthorizationExpression = this.resources.ownerAuthorizationExpressionForReadOperations(ownerAuthorizationRules, objectPath);
+            const sourceTypeAuthorizationExpression = this.resources.sourceTypeAuthorizationExpressionForReadOperations(sourceTypeAuthorizationRules);
             const throwIfUnauthorizedExpression = this.resources.throwIfUnauthorized(rules);
             // If we've any modes to check, then add the authMode check code block
             // to the start of the resolver.
@@ -738,6 +748,8 @@ All @auth directives used on field definitions are performed when the field is r
                 dynamicGroupAuthorizationExpression,
                 graphql_mapping_template_1.newline(),
                 ownerAuthorizationExpression,
+                graphql_mapping_template_1.newline(),
+                sourceTypeAuthorizationExpression,
                 graphql_mapping_template_1.newline(),
                 throwIfUnauthorizedExpression,
             ];
@@ -792,6 +804,7 @@ All @auth directives used on field definitions are performed when the field is r
         const staticGroupAuthorizationRules = this.getStaticGroupRules(rules);
         const dynamicGroupAuthorizationRules = this.getDynamicGroupRules(rules);
         const ownerAuthorizationRules = this.getOwnerRules(rules);
+        const sourceTypeAuthorizationRules = this.getSourceTypeRules(rules);
         const providerAuthorization = this.hasProviderAuthRules(rules);
         // if there is a rule combination of owner or group and private, public for userpools then we don't need to emit any of the access check
         // logic since it is not needed. For example we don't emit any of this logic for rules like this:
@@ -806,6 +819,7 @@ All @auth directives used on field definitions are performed when the field is r
             // as parameters to allow for this use case.
             const dynamicGroupAuthorizationExpression = this.resources.dynamicGroupAuthorizationExpressionForReadOperations(dynamicGroupAuthorizationRules, 'item', graphql_transformer_common_1.ResourceConstants.SNIPPETS.IsLocalDynamicGroupAuthorizedVariable, graphql_mapping_template_1.raw(`false`));
             const ownerAuthorizationExpression = this.resources.ownerAuthorizationExpressionForReadOperations(ownerAuthorizationRules, 'item', graphql_transformer_common_1.ResourceConstants.SNIPPETS.IsLocalOwnerAuthorizedVariable, graphql_mapping_template_1.raw(`false`));
+            const sourceTypeAuthorizationExpression = this.resources.sourceTypeAuthorizationExpressionForReadOperations(sourceTypeAuthorizationRules, 'item', graphql_transformer_common_1.ResourceConstants.SNIPPETS.IsSourceTypeAuthorizedVariable, graphql_mapping_template_1.raw('false'));
             const appendIfLocallyAuthorized = this.resources.appendItemIfLocallyAuthorized(rules);
             const ifNotStaticallyAuthedFilterObjects = graphql_mapping_template_1.iff(
             // alwys run when compound rules exist, must validate in database as well as locally
@@ -816,6 +830,8 @@ All @auth directives used on field definitions are performed when the field is r
                     // additional rules must be validated in dynamo
                     // OPTIMIZE: this deep clones the counts by stringifying and parsing json, this is done in java with unknown perf.
                     graphql_mapping_template_1.set(graphql_mapping_template_1.ref(graphql_transformer_common_1.ResourceConstants.SNIPPETS.StaticCompoundAuthRuleCounts), graphql_mapping_template_1.raw(`$util.parseJson($util.toJson($${graphql_transformer_common_1.ResourceConstants.SNIPPETS.CompoundAuthRuleCounts}))`)),
+                    sourceTypeAuthorizationExpression,
+                    graphql_mapping_template_1.newline(),
                     dynamicGroupAuthorizationExpression,
                     graphql_mapping_template_1.newline(),
                     ownerAuthorizationExpression,
@@ -1337,6 +1353,9 @@ All @auth directives used on field definitions are performed when the field is r
     getDynamicGroupRules(rules) {
         return rules.filter(rule => rule.allow === 'groups' && !Boolean(rule.groups));
     }
+    getSourceTypeRules(rules) {
+        return rules.filter(rule => rule.allow === 'source' && Boolean(rule.sourceTypes));
+    }
     hasProviderAuthRules(rules) {
         return rules.filter(rule => rule.provider === 'userPools' && (rule.allow === 'public' || rule.allow === 'private')).length > 0;
     }
@@ -1434,6 +1453,9 @@ All @auth directives used on field definitions are performed when the field is r
                         break;
                     case 'public':
                         rule.provider = 'apiKey';
+                        break;
+                    case 'source':
+                        rule.provider = 'userPools';
                         break;
                     default:
                         rule.provider = null;

@@ -76,6 +76,7 @@ export declare class ResourceConstants {
         IsLocalDynamicGroupAuthorizedVariable: string;
         IsStaticGroupAuthorizedVariable: string;
         IsOwnerAuthorizedVariable: string;
+        IsSourceTypeAuthorizedVariable: string;
         IsLocalOwnerAuthorizedVariable: string;
         CompoundAuthRuleCounts: string;
         StaticCompoundAuthRuleCounts: string;
