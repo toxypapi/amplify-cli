@@ -916,7 +916,7 @@ ${rule.and ? ', and: "' + rule.and + '"' : ''} }`
         comment(
           `Authorization rule: { allow: ${rule.allow}, ownerField: "${ownerAttribute}", identityClaim: "${identityAttribute}"${compoundAttribute} }`
         ),
-        set(ref(allowedOwnersVariable), ref(`${variableToCheck}.${ownerAttribute}`)),
+        set(ref(allowedOwnersVariable), ref(`util.defaultIfNull($${variableToCheck}.${ownerAttribute}, [])`)),
         isUser
           ? // tslint:disable-next-line
             set(
