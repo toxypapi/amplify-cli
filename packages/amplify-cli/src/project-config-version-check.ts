@@ -4,7 +4,7 @@ import { Context } from './domain/context';
 import inquirer from './domain/inquirer-helper';
 
 const prevLambdaRuntimeVersions = ['nodejs8.10'];
-const lambdaRuntimeVersion = 'nodejs10.x';
+const lambdaRuntimeVersion = 'nodejs12.x';
 const jsonIndentation = 4;
 
 export async function checkProjectConfigVersion(context: Context): Promise<void> {

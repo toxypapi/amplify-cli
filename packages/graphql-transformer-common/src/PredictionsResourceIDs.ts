@@ -5,7 +5,7 @@ export class PredictionsResourceIDs {
   static lambdaName = 'predictionsLambda';
   static lambdaID = 'predictionsLambdaFunction'
   static lambdaHandlerName = 'predictionsLambda.handler';
-  static lambdaRuntime = 'nodejs10.x';
+  static lambdaRuntime = 'nodejs12.x';
   static lambdaTimeout = 60;
 
   static getPredictionFunctionName(action: string) {

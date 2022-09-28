@@ -12,7 +12,7 @@ var PredictionsResourceIDs = /** @class */ (function () {
     PredictionsResourceIDs.lambdaName = 'predictionsLambda';
     PredictionsResourceIDs.lambdaID = 'predictionsLambdaFunction';
     PredictionsResourceIDs.lambdaHandlerName = 'predictionsLambda.handler';
-    PredictionsResourceIDs.lambdaRuntime = 'nodejs10.x';
+    PredictionsResourceIDs.lambdaRuntime = 'nodejs12.x';
     PredictionsResourceIDs.lambdaTimeout = 60;
     return PredictionsResourceIDs;
 }());

@@ -23,7 +23,7 @@ const path = __importStar(require("path"));
 const fs = __importStar(require("fs-extra"));
 const inquirer_helper_1 = __importDefault(require("./domain/inquirer-helper"));
 const prevLambdaRuntimeVersions = ['nodejs8.10'];
-const lambdaRuntimeVersion = 'nodejs10.x';
+const lambdaRuntimeVersion = 'nodejs12.x';
 const jsonIndentation = 4;
 function checkProjectConfigVersion(context) {
     return __awaiter(this, void 0, void 0, function* () {
